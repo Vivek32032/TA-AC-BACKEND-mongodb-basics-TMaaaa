@@ -1,0 +1,35 @@
+writeCode
+
+Write command to
+
+- List collections from a database.
+- create a new collection in your country database which you created recently.
+
+Write code to:-
+
+- crate a database named `weather`
+- create a capped collection named `temperature` with maximum of 3 documents and try inserting more than 3 to see the result.
+- create a simple collection named `humidity`
+- check whether `temperature` collection is capped or not ?
+- Delete `humidity` collection and then the entire database(weather).
+
+
+
+show dbs
+db.createCollection('patna');
+
+
+use weather
+db.createCollection('temperature');
+db.createCollection('temperature',{capped: true,size: 1024, max:3})
+db.temperature.insertMany([{delhi:34},{mumbai:32},{chennai:45}]);
+db.temperature.insert({dharamsala:23})
+
+
+db.createCollection('humidity')
+show collections
+db.temperature.isCapped()
+db.humidity.drop()
+show collections
+db
+db.dropDatabase
