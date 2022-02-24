@@ -16,3 +16,6 @@ Write code to
 
 use India
 show dbs
+db.createCollection('delhi')
+show dbs
+db
