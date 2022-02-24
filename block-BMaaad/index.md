@@ -20,4 +20,16 @@ db.createCollection('patna');
 
 
 use weather
-db.createCollection('temperature')
+db.createCollection('temperature');
+db.createCollection('temperature',{capped: true,size: 1024, max:3})
+db.temperature.insertMany([{delhi:34},{mumbai:32},{chennai:45}]);
+db.temperature.insert({dharamsala:23})
+
+
+db.createCollection('humidity')
+show collections
+db.temperature.isCapped()
+db.humidity.drop()
+show collections
+db
+db.dropDatabase
