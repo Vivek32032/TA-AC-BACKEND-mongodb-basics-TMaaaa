@@ -20,4 +20,61 @@ Write code to:-
 
 use sports
 show dbs
-db.createCollection('cricket','football','TT')
+db.createCollection('cricket')
+
+```data.js
+
+var players = [
+  {
+    name : 'player 1',
+    email : 'p1@gmail.com',
+    age : 22,
+    bid_price : '$20k'
+  },
+   {
+    name : 'player 2',
+    email : 'p2@gmail.com',
+    age : 25,
+    bid_price : '$30k'
+  },
+   {
+    name : 'player 3',
+    email : 'p3@gmail.com',
+    age : 27,
+    bid_price : '$25k'
+  },
+   {
+    name : 'player 4',
+    email : 'p4@gmail.com',
+    age : 20,
+    bid_price : '$18k'
+  }
+
+]
+```
+db.cricket.insertMany(players);
+db.cricket.find().pretty();
+show collection
+
+
+db.football.insertMany(players);
+db.TT.insertMany(players);
+
+show collections
+db.TT.renameCollection('tennis');
+db.createCollection('khokho',{capped:true,size:2048,max:3})
+
+db.khokho.insertMany(players);kho
+show collections
+db.khokho.isCapped()
+db.tennis.isCapped();
+db.football.find();
+db.football.remove({});
+
+db.cricket.drop();
+db.dropDatabase();
+
+db
+show collections
+use test
+db
