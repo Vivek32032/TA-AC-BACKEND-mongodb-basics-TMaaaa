@@ -30,6 +30,42 @@ Write code to execute below expressions.
   },
   tags: ['js', 'mongo']
 }
+
+let articleCollection = [
+  {
+  _id: '1',
+  title: 'HTML @ CSS',
+  details: 'Hyper Text Markup Language',
+  author: {
+    name: 'Tom Herry',
+    email: 'tomHerry@gmail.com',
+    age: '31'
+  },
+  tags: ['html', 'css']
+},
+  {
+  _id: '2',
+  title: 'Javascript',
+  details: 'How Javascript codes executes',
+  author: {
+    name: 'Adward Herry',
+    email: 'adwardHerry@gmail.com',
+    age: '31'
+  },
+  tags: ['javascript']
+},
+  {
+  _id: '3',
+  title: 'MongoDB',
+  details: 'Learn backend (mongoDB',
+  author: {
+    name: 'Tom Brush',
+    email: 'tomBrush@gmail.com',
+    age: '31'
+  },
+  tags: ['MongoDb']
+}
+]
 ```
 
 4. Find all the articles using `db.COLLECTION_NAME.find()`
@@ -171,3 +207,20 @@ Insert above data into database to perform below queries:-
 - Update user with extra golf field in sports array whose name is "Steve Ortega".
 - Find all users who play either 'football' or 'cricket'.
 - Find all users whose name includes 'ri' in their name.
+
+use blog;
+db.createCollection('articles')
+db.articles.insertMany(articleCollection)
+db.articles.find().pretty()
+db.articles.find({_id :'3'})
+db.articles.find({title: 'MongoDB'});
+db.articles.find({'author.name': 'Tom Brush'})
+db.articles.find( {'tags': {$all : ['MongoDb']}})
+db.articles.update({'_id' : '3'},{$set : {'title' : 'mongodb'}})
+db.articles.update({'title' : 'mongodb'},{$set : {'author.name' : 'Edward'}})
+
+db.articles.update
+
+
+1.  rename details field to description from all articles in articles collection.
+2.  Add additional tag in a specific document.
