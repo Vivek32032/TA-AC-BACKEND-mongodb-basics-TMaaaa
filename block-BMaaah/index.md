@@ -211,7 +211,7 @@ Insert above data into database to perform below queries:-
 use blog;
 db.createCollection('articles')
 db.articles.insertMany(articleCollection)
-db.articles.find().pretty()
+db.articles.find({}).pretty()
 db.articles.find({_id :'3'})
 db.articles.find({title: 'MongoDB'});
 db.articles.find({'author.name': 'Tom Brush'})
@@ -219,8 +219,20 @@ db.articles.find( {'tags': {$all : ['MongoDb']}})
 db.articles.update({'_id' : '3'},{$set : {'title' : 'mongodb'}})
 db.articles.update({'title' : 'mongodb'},{$set : {'author.name' : 'Edward'}})
 
-db.articles.update
+//if we use $set it replaces only that set of value pair but without $set  it update whole object with this set of key and value pair.
+
+db.articles.updateMany({},{$rename : {'details' : 'description'}})
+
+db.articles.update({'title' : "mongodb"},{$push : { 'tags' : "react"}})
+
+db.articles.update({'title' : "mongodb"},{$inc: {"author.age" : 5 }})
+
+db.articles.remove({"_id" : "3"});
 
 
-1.  rename details field to description from all articles in articles collection.
-2.  Add additional tag in a specific document.
+
+
+
+db.users.find({gender : "Male",sports: "cricket"}).pretty();
+db.users.update({name : "Steve Ortega"}, {$push:{sports: "golf"}} );
+db.users.find({sports : {$in : ["football", "cricket"]}})
