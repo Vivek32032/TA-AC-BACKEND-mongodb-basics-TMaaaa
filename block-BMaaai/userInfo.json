@@ -1,0 +1,37 @@
+
+  {
+    "_id": "335",
+    "host": "localhost:27017",
+    "username": "JuanaAtkinson",
+    "password": "Vivek@kumar",
+    "db": "user_Info",
+    "file": "/home/vivek320/Documents/altcampus/mongoDB/TA-AC-BACKEND-mongodb-basics-TMaaaa/block-BMaaai/userInfo.json",
+    "jsonArray": [
+      {
+        "_id": "621ca0989db1dc4a19b09541",
+        "age": 22,
+        "name": "Bradshaw Henry",
+        "gender": "male",
+        "company": "WRAPTURE",
+        "email": "bradshawhenry@wrapture.com",
+        "phone": "+1 (832) 455-2140",
+        "tags": [
+          "adipisicing",
+          "anim"
+        ]
+      },
+      {
+        "_id": "621ca09818698c40624772ca",
+        "age": 38,
+        "name": "Arlene Woodard",
+        "gender": "female",
+        "company": "ZILLACOM",
+        "email": "arlenewoodard@zillacom.com",
+        "phone": "+1 (935) 565-3529",
+        "tags": [
+          "ea",
+          "minim"
+        ]
+      }]
+   
+  }
